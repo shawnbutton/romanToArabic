@@ -1,7 +1,7 @@
 const doIt = () => {
-    return true
+  return true
 }
 
 module.exports = {
-    doIt
+  doIt
 }
