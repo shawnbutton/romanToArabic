@@ -5,6 +5,12 @@
   "main": "index.js",
   "author": "shawn <shawnbutton@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "lint": "standard",
+    "lint-fix": "standard --fix",
+    "test": "jest --verbose --colors",
+    "watch": "jest --watch"
+  },
   "devDependencies": {
     "jest": "^27.2.1",
     "standard": "^16.0.3"
