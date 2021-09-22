@@ -4,5 +4,9 @@
   "description": "base project for js katas",
   "main": "index.js",
   "author": "shawn <shawnbutton@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^27.2.1",
+    "standard": "^16.0.3"
+  }
 }
