@@ -1,10 +1,11 @@
 const romanToArabic = roman => {
   if (roman === 'IV') return 4
-  if (roman === 'V') return 5
-  if (roman === 'VI') return 6
-  if (roman === 'VII') return 7
-  if (roman === 'VIII') return 8
-  return roman.length
+  let arabic = 0
+  if (roman.startsWith('V')) {
+    arabic = 5
+    roman = roman.slice(1)
+  }
+  return arabic + roman.length
 }
 
 module.exports = {
