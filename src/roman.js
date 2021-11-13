@@ -1,12 +1,24 @@
 const romanToArabic = roman => {
-  if (roman === 'IV') return 4
-  if (roman === 'IX') return 9
-  if (roman === 'X') return 10
   let arabic = 0
-  if (roman.startsWith('V')) {
-    arabic = 5
+
+  if (roman.startsWith('X')) {
+    arabic = 10
     roman = roman.slice(1)
   }
+
+  if (roman.startsWith('V')) {
+    arabic = arabic + 5
+    roman = roman.slice(1)
+  }
+
+  if (roman === 'IV') {
+    return arabic + 4
+  }
+
+  if (roman === 'IX') {
+    return arabic + 9
+  }
+
   return arabic + roman.length
 }
 
