@@ -1,8 +1,13 @@
 const romanToArabic = roman => {
   let arabic = 0
 
-  if (roman.startsWith('X')) {
-    arabic = 10
+  if (roman === 'XL') {
+    arabic = arabic + 40
+    roman = roman.slice(2)
+  }
+
+  while (roman.startsWith('X')) {
+    arabic = arabic + 10
     roman = roman.slice(1)
   }
 
@@ -12,11 +17,13 @@ const romanToArabic = roman => {
   }
 
   if (roman === 'IV') {
-    return arabic + 4
+    arabic = arabic + 4
+    roman = roman.slice(2)
   }
 
   if (roman === 'IX') {
-    return arabic + 9
+    arabic = arabic + 9
+    roman = roman.slice(2)
   }
 
   return arabic + roman.length

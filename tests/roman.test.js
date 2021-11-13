@@ -30,8 +30,20 @@ describe('Roman to Arabic Number Convertor', () => {
     ])('converts %s to %i', (given, expected) => {
       expect(sut.romanToArabic(given)).toEqual(expected)
     })
+  })
 
-
-
+  describe('powers of ten', () => {
+    it.each([
+      ['XX', 20],
+      ['XXX', 30],
+      ['XL', 40],
+      // ['L', 50],
+      // ['LX', 60],
+      // ['LXX', 70],
+      // ['LXXX', 80],
+      // ['XC', 90]
+    ])('converts %s to %i', (given, expected) => {
+      expect(sut.romanToArabic(given)).toEqual(expected)
+    })
   })
 })
