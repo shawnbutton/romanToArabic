@@ -37,11 +37,23 @@ describe('Roman to Arabic Number Convertor', () => {
       ['XX', 20],
       ['XXX', 30],
       ['XL', 40],
-      // ['L', 50],
-      // ['LX', 60],
-      // ['LXX', 70],
-      // ['LXXX', 80],
-      // ['XC', 90]
+      ['L', 50],
+      ['LX', 60],
+      ['LXX', 70],
+      ['LXXX', 80],
+      ['XC', 90]
+    ])('converts %s to %i', (given, expected) => {
+      expect(sut.romanToArabic(given)).toEqual(expected)
+    })
+  })
+
+  describe('random numbers in the tens range', () => {
+    it.each([
+      ['XXIII', 23],
+      ['XXXIV', 34],
+      ['XLVIII', 48],
+      ['LXIX', 69],
+      ['XCIX', 99]
     ])('converts %s to %i', (given, expected) => {
       expect(sut.romanToArabic(given)).toEqual(expected)
     })

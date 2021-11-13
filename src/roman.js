@@ -1,32 +1,25 @@
 const romanToArabic = roman => {
   let arabic = 0
 
-  if (roman === 'XL') {
-    arabic = arabic + 40
-    roman = roman.slice(2)
+  const symbols = {
+    XC: 90,
+    L: 50,
+    XL: 40,
+    X: 10,
+    IX: 9,
+    V: 5,
+    IV: 4,
+    I: 1
   }
 
-  while (roman.startsWith('X')) {
-    arabic = arabic + 10
-    roman = roman.slice(1)
+  for (const symbol in symbols) {
+    while (roman.startsWith(symbol)) {
+      arabic += symbols[symbol]
+      roman = roman.slice(symbol.length)
+    }
   }
 
-  if (roman.startsWith('V')) {
-    arabic = arabic + 5
-    roman = roman.slice(1)
-  }
-
-  if (roman === 'IV') {
-    arabic = arabic + 4
-    roman = roman.slice(2)
-  }
-
-  if (roman === 'IX') {
-    arabic = arabic + 9
-    roman = roman.slice(2)
-  }
-
-  return arabic + roman.length
+  return arabic
 }
 
 module.exports = {
