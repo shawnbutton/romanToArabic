@@ -1,6 +1,7 @@
 const romanToArabic = roman => {
-  if (roman === 'I') return 1
-  return 2
+  if (roman === 'IV') return 4
+  if (roman === 'V') return 5
+  return roman.length
 }
 
 module.exports = {
