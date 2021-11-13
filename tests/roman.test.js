@@ -58,4 +58,19 @@ describe('Roman to Arabic Number Convertor', () => {
       expect(sut.romanToArabic(given)).toEqual(expected)
     })
   })
+
+  describe('powers of hundred', () => {
+    it.each([
+      ['C', 100],
+      ['CC', 200],
+      ['CD', 400],
+      ['D', 500],
+      ['DC', 600],
+      ['CM', 900]
+    ])('converts %s to %i', (given, expected) => {
+      expect(sut.romanToArabic(given)).toEqual(expected)
+    })
+  })
+
+
 })

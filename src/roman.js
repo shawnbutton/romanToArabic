@@ -2,6 +2,10 @@ const romanToArabic = roman => {
   let arabic = 0
 
   const symbols = {
+    CM: 900,
+    D: 500,
+    CD: 400,
+    C: 100,
     XC: 90,
     L: 50,
     XL: 40,
