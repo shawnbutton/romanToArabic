@@ -1,5 +1,4 @@
 const romanToArabic = roman => {
-  let arabic = 0
 
   const symbols = {
     M: 1000,
@@ -17,14 +16,23 @@ const romanToArabic = roman => {
     I: 1
   }
 
-  for (const symbol in symbols) {
-    while (roman.startsWith(symbol)) {
-      arabic += symbols[symbol]
-      roman = roman.slice(symbol.length)
-    }
+  const values = roman
+    .split('')
+    .map(symbol => symbols[symbol])
+
+  if (values.length === 0) {
+    return 0
   }
 
-  return arabic
+  if (values.length === 1) {
+    return values[0]
+  }
+
+  if (values[0] < values[1]) {
+    return values[1] - values[0] + romanToArabic(roman.slice(2))
+  } else {
+    return values[0] + romanToArabic(roman.slice(1))
+  }
 }
 
 module.exports = {
