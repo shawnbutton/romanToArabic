@@ -72,5 +72,27 @@ describe('Roman to Arabic Number Convertor', () => {
     })
   })
 
+  describe('random numbers in the hundred range', () => {
+    it.each([
+      ['CLIX', 159],
+      ['CDLXXXIV', 484],
+      ['DCCLXIII', 763],
+      ['CMXCIX', 999]
+    ])('converts %s to %i', (given, expected) => {
+      expect(sut.romanToArabic(given)).toEqual(expected)
+    })
+  })
+
+  describe('numbers in thousand range', () => {
+    it.each([
+      ['M', 1000],
+      ['MM', 2000],
+      ['MMM', 3000],
+      ['MMCDXLVIII', 2448],
+      ['MMMCMXCIX', 3999]
+    ])('converts %s to %i', (given, expected) => {
+      expect(sut.romanToArabic(given)).toEqual(expected)
+    })
+  })
 
 })
