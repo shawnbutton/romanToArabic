@@ -94,5 +94,4 @@ describe('Roman to Arabic Number Convertor', () => {
       expect(sut.romanToArabic(given)).toEqual(expected)
     })
   })
-
 })
